@@ -1,0 +1,49 @@
+<body>
+
+<h2>Inventory System</h2>
+
+<input type="text" id="itemName" placeholder="Item Name">
+<input type="number" id="itemQty" placeholder="Quantity">
+<button onclick="addItem()">Add Item</button>
+
+<table border="1" id="inventory">
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th>
+  </tr>
+</table>
+
+<script>
+function addItem() {
+    let name = document.getElementById("itemName").value;
+    let qty = document.getElementById("itemQty").value;
+
+    if (name === "" || qty === "") return;
+
+    let table = document.getElementById("inventory");
+    let row = table.insertRow();
+
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+
+    cell1.textContent = name;
+    cell2.textContent = qty;
+
+    // Double click to edit quantity
+    cell2.ondblclick = function() {
+        let input = document.createElement("input");
+        input.type = "number";
+        input.value = cell2.textContent;
+
+        input.onblur = function() {
+            cell2.textContent = input.value;
+        };
+
+        cell2.textContent = "";
+        cell2.appendChild(input);
+        input.focus();
+    };
+}
+</script>
+
+</body>

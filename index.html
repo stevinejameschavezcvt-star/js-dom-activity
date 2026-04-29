@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Banner</title>
+
+<style>
+body {
+    background-color: #8fb3c1;
+    font-family: Arial;
+}
+
+/* Banner */
+.banner {
+    background-color: #f5f0c6;
+    border: 2px solid black;
+    width: 500px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* Input section */
+.input-area {
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+button {
+    width: 150px;
+    height: 60px;
+    margin-right: 10px;
+    border: 1px solid gray;
+    background-color: #e6e6e6;
+    cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="banner" id="banner">
+    <h3>Hi there! I'm Stevine Chavez.</h3>
+    <ul id="myList">
+        <li>I'm a Student in EAC CAVITE.</li>
+        <li>I have an interest in any kind of all of my course!</li>
+        <li>I spend most of my time in games and creating codes.</li>
+        <li>I like learning a new code or anything related to my life.</li>
+        <li>new hobby item</li>
+    </ul>
+</div>
+
+<div class="input-area">
+    <label>Add New:</label>
+    <input type="text" id="itemInput">
+</div>
+
+<button onclick="changeBanner()">Change banner background</button>
+<button onclick="changePage()">Change page background</button>
+<button onclick="addItem()">Add new item on the list</button>
+
+<script>
+// Change banner color
+function changeBanner() {
+    document.getElementById("banner").style.backgroundColor = "#d4f1f9";
+}
+
+// Change page background
+function changePage() {
+    document.body.style.backgroundColor = "#c1c1c1";
+}
+
+// Add new list item
+function addItem() {
+    let input = document.getElementById("itemInput").value;
+
+    if (input === "") return;
+
+    let li = document.createElement("li");
+    li.textContent = input;
+
+    document.getElementById("myList").appendChild(li);
+
+    document.getElementById("itemInput").value = "";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<body>
+
+<h2>Register</h2>
+
+<input type="text" id="username" placeholder="Username"><br><br>
+<input type="password" id="password" placeholder="Password"><br><br>
+
+<button onclick="validate()">Register</button>
+
+<p id="message"></p>
+
+<script>
+function validate() {
+    let password = document.getElementById("password").value;
+    let message = document.getElementById("message");
+
+    // Check length
+    if (password.length < 8) {
+        message.textContent = "Password must be at least 8 characters.";
+        return;
+    }
+
+    // Check if only numbers
+    if (/^\d+$/.test(password)) {
+        message.textContent = "Password cannot be only numbers.";
+        return;
+    }
+
+    // Check uppercase and lowercase
+    if (!(/[A-Z]/.test(password) && /[a-z]/.test(password))) {
+        message.textContent = "Password must include uppercase and lowercase letters.";
+        return;
+    }
+
+    message.textContent = "Registration Successful!";
+}
+</script>
+
+</body>

@@ -1,0 +1,36 @@
+<body>
+
+<div class="card">
+  <h2 id="verse">"I can do all things through Christ who strengthens me."</h2>
+  <p>- Philippians 4:13</p>
+  <button onclick="changeColor()">Change Theme</button>
+</div>
+
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  font-family: Arial;
+}
+
+.card {
+  text-align: center;
+  padding: 30px;
+  border-radius: 15px;
+  background: rgba(0,0,0,0.5);
+}
+</style>
+
+<script>
+// Change color theme
+function changeColor() {
+    document.body.style.background =
+      "linear-gradient(to right, #ff9966, #ff5e62)";
+}
+</script>
+
+</body>
